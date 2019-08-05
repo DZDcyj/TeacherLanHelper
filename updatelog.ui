@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>UpdateLog</class>
+ <widget class="QDialog" name="UpdateLog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>968</width>
+    <height>320</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>更新日志</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="pic.qrc">
+    <normaloff>:/new/prefix1/001.ico</normaloff>:/new/prefix1/001.ico</iconset>
+  </property>
+  <widget class="QLabel" name="label_4">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>971</width>
+     <height>311</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>V1.0: 初始的bat文件，只能打开课件。
+V2.0: 在bat文件的基础上进行了VB的设计。
+V3.0: 增加了课件修复、兰老师简介等功能。正式更名为“兰老师好帮手”。
+V3.1: 增加了课件文件大小的显示。
+V3.2b1: 优化了算法，不再需要bat文件的引导。
+V3.2b2: 取消了部分窗口的最大化、最小化功能。
+V3.2b3: 添加了更新日志。
+V3.2b4: 添加了外部链接。
+V3.3: 添加了点赞数保存功能，禁用窗口大小改变。
+V4.0: 增加了兰老师高徒高论集。
+V4.0 Insider: 推出了“兰老师保护系统”对数据进行保护。
+V4.1: 添加了判断课件是否存在功能，取消了外部链接，针对Windows10系统用户优化了各种UI的设计。
+V5.0: 使用Qt语言将程序进行重构。</string>
+   </property>
+  </widget>
+ </widget>
+ <resources>
+  <include location="pic.qrc"/>
+ </resources>
+ <connections/>
+</ui>
