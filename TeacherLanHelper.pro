@@ -26,29 +26,35 @@ CONFIG += c++11
 
 SOURCES += \
         about.cpp \
+        backingup.cpp \
         lanforum.cpp \
         laninfo.cpp \
         main.cpp \
         mainwindow.cpp \
         opensource.cpp \
+        protectormain.cpp \
         signup.cpp \
         updatelog.cpp
 
 HEADERS += \
         about.h \
+        backingup.h \
         lanforum.h \
         laninfo.h \
         mainwindow.h \
         opensource.h \
+        protectormain.h \
         signup.h \
         updatelog.h
 
 FORMS += \
         about.ui \
+        backingup.ui \
         lanforum.ui \
         laninfo.ui \
         mainwindow.ui \
         opensource.ui \
+        protectormain.ui \
         signup.ui \
         updatelog.ui
 
