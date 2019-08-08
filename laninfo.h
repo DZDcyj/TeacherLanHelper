@@ -5,6 +5,7 @@
 #include <QMessageBox>
 #include "signup.h"
 #include "lanforum.h"
+#include <QSettings>
 namespace Ui {
 class LanInfo;
 }

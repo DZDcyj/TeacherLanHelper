@@ -1,6 +1,7 @@
 ﻿#include "laninfo.h"
 #include "ui_laninfo.h"
 
+static  QSettings settings("HKEY_CURRENT_USER\\Software\\llsqt",QSettings::NativeFormat);
 LanInfo::LanInfo(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::LanInfo)
@@ -8,6 +9,15 @@ LanInfo::LanInfo(QWidget *parent) :
     ui->setupUi(this);
     setWindowFlags(Qt::WindowCloseButtonHint|Qt::MSWindowsFixedSizeDialogHint);
     setFixedSize(this->width(),this->height());     // 固定窗口大小
+    int likes=0;
+    if (settings.value("likes")!=NULL)
+    {
+        likes=settings.value("likes").toInt();
+    }
+    else {
+        settings.setValue("likes",0);
+    }
+    ui->Likes->setText(tr("%1").arg(likes));
 }
 
 LanInfo::~LanInfo()
@@ -22,6 +32,7 @@ void LanInfo::on_Like_clicked()
     if (newlikes<10000000)
     {
         ui->Likes->setText(tr("%1").arg(newlikes));
+        settings.setValue("likes",ui->Likes->text().toInt());
     }
     else
     {

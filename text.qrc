@@ -1,6 +1,0 @@
-<RCC>
-    <qresource prefix="/">
-        <file alias="comment">comments.txt</file>
-    </qresource>
-    <qresource prefix="/new/prefix1"/>
-</RCC>

@@ -4,6 +4,9 @@
 #include <QDialog>
 #include <QFile>
 #include <QString>
+#include <QTextStream>
+#include <QDebug>
+#include <QDir>
 namespace Ui {
 class LanForum;
 }
