@@ -3,6 +3,7 @@
 
 #include <QDialog>
 #include <QSettings>
+#include "changepassword.h"
 
 namespace Ui {
 class AdminMenu;
@@ -19,8 +20,20 @@ public:
 private slots:
     void on_AutoRecover_clicked(bool checked);
 
+    void on_DataSave_clicked();
+
+    void getSignal();
+
+    void on_ChangePswd_clicked();
+
+    void on_OpenMode_clicked();
+
 private:
     Ui::AdminMenu *ui;
+
+    ChangePassword *change;
+signals:
+    void backtomenu();
 };
 
 #endif // ADMINMENU_H

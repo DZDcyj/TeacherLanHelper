@@ -7,13 +7,20 @@ static bool isProtectMode = false;
 static QSettings qsettings("HKEY_CURRENT_USER\\Software\\llsqt",QSettings::NativeFormat);
 const int PROTECT_MODE=2;
 const int OPEN_MODE=1;
+const int TRUE = 1;
 protectormain::protectormain(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::protectormain)
 {
     ui->setupUi(this);
+    setAttribute(Qt::WA_QuitOnClose);
     setWindowFlags(Qt::MSWindowsFixedSizeDialogHint|Qt::FramelessWindowHint);
     setFixedSize(this->width(),this->height());     // 固定窗口大小
+    if (qsettings.value("autoChange").toInt()==TRUE&&qsettings.value("mode").toInt()==OPEN_MODE)
+    {
+        saveFromOpen();
+        qsettings.setValue("mode",PROTECT_MODE);
+    }
     getMode();
     qtimer->setInterval(1000);
     connect(qtimer,SIGNAL(timeout()),this,SLOT(secondminus()));
@@ -46,6 +53,7 @@ void protectormain::getMode()
     }
     else
     {
+        ui->ToProtectMode->setVisible(true);
         ui->Status->setText(QString::fromLocal8Bit("当前处于开放模式"));
         ui->Status->setStyleSheet("QLabel{color:red;}");
     }
@@ -77,9 +85,8 @@ void protectormain::on_Enter_clicked()
         mainwindow->show();
     }
     connect(ui->Enter,SIGNAL(clicked()),this,SLOT(reset()));
-    this->close();
     qtimer->stop();
-    this->destroy();
+    this->accept();
 }
 void protectormain::reset()
 {
@@ -91,7 +98,7 @@ void protectormain::on_ToProtectMode_clicked()
 {
     qsettings.setValue("mode",PROTECT_MODE);
     qtimer->stop();
-    QMessageBox::information(this,QString::fromLocal8Bit("兰老师提示"),QString::fromLocal8Bit("已经切换到保护模式！"));
+    saveFromOpen();
     qtimer->start();
     isProtectMode=false;
     getMode();
@@ -101,7 +108,9 @@ void protectormain::reshow()
 {
     this->show();
     this->reset();
+    getMode();
     qtimer->start();
+    qtimer->setInterval(1000);
 }
 
 void protectormain::on_AdminMenu_clicked()
@@ -110,7 +119,16 @@ void protectormain::on_AdminMenu_clicked()
     adminlogin=new AdminLogin;
     adminlogin->show();
     connect(adminlogin,SIGNAL(back()),this,SLOT(reshow()));
-    this->close();
+    connect(adminlogin,SIGNAL(reset()),this,SLOT(reset()));
+    this->reset();
     qtimer->stop();
-    this->destroy();
+    this->accept();
+}
+
+void protectormain::saveFromOpen()
+{
+    save = new Saving;
+    save->setModal(true);
+    this->reset();
+    save->show();
 }

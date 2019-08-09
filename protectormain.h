@@ -9,6 +9,8 @@
 #include <QMessageBox>
 #include "adminmenu.h"
 #include "adminlogin.h"
+#include "saving.h"
+
 namespace Ui {
 class protectormain;
 }
@@ -26,6 +28,7 @@ private:
     MainWindow *mainwindow;
     backingup *backingup;
     AdminLogin *adminlogin;
+    Saving *save;
 
 private slots:
    void secondminus();
@@ -35,6 +38,7 @@ private slots:
    void getMode();
    void on_AdminMenu_clicked();
    void reshow();
+   void saveFromOpen();
 };
 
 #endif // PROTECTORMAIN_H

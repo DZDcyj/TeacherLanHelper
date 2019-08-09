@@ -47,6 +47,5 @@ void backingup::finish()
     mainwindow=new MainWindow;
     mainwindow->show();
     qtimer->stop();
-    this->close();
-    this->destroy();
+    this->accept();
 }

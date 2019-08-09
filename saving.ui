@@ -11,7 +11,11 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>保存中……</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="pic.qrc">
+    <normaloff>:/new/prefix1/001.ico</normaloff>:/new/prefix1/001.ico</iconset>
   </property>
   <widget class="QLabel" name="label">
    <property name="geometry">
@@ -32,7 +36,7 @@
     <string notr="true">color: rgb(255, 0, 0);</string>
    </property>
    <property name="text">
-    <string>正在保存……</string>
+    <string>正在安装……</string>
    </property>
   </widget>
   <widget class="QProgressBar" name="progressBar">
@@ -52,6 +56,8 @@
    </property>
   </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="pic.qrc"/>
+ </resources>
  <connections/>
 </ui>

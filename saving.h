@@ -1,7 +1,8 @@
-#ifndef SAVING_H
+﻿#ifndef SAVING_H
 #define SAVING_H
 
 #include <QDialog>
+#include <QTimer>
 
 namespace Ui {
 class Saving;
@@ -17,6 +18,12 @@ public:
 
 private:
     Ui::Saving *ui;
+
+private slots:
+    void addProgress();
+    void reset();
+signals:
+    void backtomenu();
 };
 
 #endif // SAVING_H

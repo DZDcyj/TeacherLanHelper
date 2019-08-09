@@ -11,7 +11,11 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>兰老师保护系统</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="pic.qrc">
+    <normaloff>:/new/prefix1/001.ico</normaloff>:/new/prefix1/001.ico</iconset>
   </property>
   <widget class="QPushButton" name="Enter">
    <property name="geometry">
@@ -146,6 +150,8 @@
    </property>
   </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="pic.qrc"/>
+ </resources>
  <connections/>
 </ui>

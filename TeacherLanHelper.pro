@@ -29,6 +29,7 @@ SOURCES += \
         adminlogin.cpp \
         adminmenu.cpp \
         backingup.cpp \
+        changepassword.cpp \
         lanforum.cpp \
         laninfo.cpp \
         main.cpp \
@@ -44,6 +45,7 @@ HEADERS += \
         adminlogin.h \
         adminmenu.h \
         backingup.h \
+        changepassword.h \
         lanforum.h \
         laninfo.h \
         mainwindow.h \
@@ -58,6 +60,7 @@ FORMS += \
         adminlogin.ui \
         adminmenu.ui \
         backingup.ui \
+        changepassword.ui \
         lanforum.ui \
         laninfo.ui \
         mainwindow.ui \

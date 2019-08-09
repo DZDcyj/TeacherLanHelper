@@ -11,7 +11,11 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>恢复中……</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="pic.qrc">
+    <normaloff>:/new/prefix1/001.ico</normaloff>:/new/prefix1/001.ico</iconset>
   </property>
   <widget class="QProgressBar" name="progressBar">
    <property name="geometry">
@@ -52,6 +56,8 @@
    </property>
   </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="pic.qrc"/>
+ </resources>
  <connections/>
 </ui>

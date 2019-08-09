@@ -58,14 +58,13 @@ void AdminLogin::on_OK_clicked()
     else {
         adminmenu=new AdminMenu;
         adminmenu->show();
-        this->close();
-        this->destroy();
+        connect(adminmenu,SIGNAL(backtomenu()),this,SLOT(on_Cancel_clicked()));
+        this->accept();
     }
 }
 
 void AdminLogin::on_Cancel_clicked()
 {
-    this->close();
-    this->destroy();
+    this->reject();
     emit back();
 }

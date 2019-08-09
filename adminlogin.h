@@ -28,6 +28,7 @@ private slots:
     void on_Cancel_clicked();
 
 signals:
+    void reset();
     void back();
 };
 
