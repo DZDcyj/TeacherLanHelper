@@ -14,7 +14,8 @@ LanInfo::LanInfo(QWidget *parent) :
     {
         likes=settings.value("likes").toInt();
     }
-    else {
+    else
+    {
         settings.setValue("likes",0);
     }
     ui->Likes->setText(tr("%1").arg(likes));

@@ -4,7 +4,11 @@
 #include <QDialog>
 #include <QTimer>
 #include "mainwindow.h"
-
+#include "backingup.h"
+#include <QSettings>
+#include <QMessageBox>
+#include "adminmenu.h"
+#include "adminlogin.h"
 namespace Ui {
 class protectormain;
 }
@@ -20,11 +24,17 @@ public:
 private:
     Ui::protectormain *ui;
     MainWindow *mainwindow;
+    backingup *backingup;
+    AdminLogin *adminlogin;
 
 private slots:
    void secondminus();
    void on_Enter_clicked();
    void reset();
+   void on_ToProtectMode_clicked();
+   void getMode();
+   void on_AdminMenu_clicked();
+   void reshow();
 };
 
 #endif // PROTECTORMAIN_H

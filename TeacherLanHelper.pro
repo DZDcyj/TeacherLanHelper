@@ -26,6 +26,8 @@ CONFIG += c++11
 
 SOURCES += \
         about.cpp \
+        adminlogin.cpp \
+        adminmenu.cpp \
         backingup.cpp \
         lanforum.cpp \
         laninfo.cpp \
@@ -33,28 +35,35 @@ SOURCES += \
         mainwindow.cpp \
         opensource.cpp \
         protectormain.cpp \
+        saving.cpp \
         signup.cpp \
         updatelog.cpp
 
 HEADERS += \
         about.h \
+        adminlogin.h \
+        adminmenu.h \
         backingup.h \
         lanforum.h \
         laninfo.h \
         mainwindow.h \
         opensource.h \
         protectormain.h \
+        saving.h \
         signup.h \
         updatelog.h
 
 FORMS += \
         about.ui \
+        adminlogin.ui \
+        adminmenu.ui \
         backingup.ui \
         lanforum.ui \
         laninfo.ui \
         mainwindow.ui \
         opensource.ui \
         protectormain.ui \
+        saving.ui \
         signup.ui \
         updatelog.ui
 
