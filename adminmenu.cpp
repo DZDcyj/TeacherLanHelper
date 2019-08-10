@@ -69,3 +69,9 @@ void AdminMenu::on_OpenMode_clicked()
     emit backtomenu();
     this->accept();
 }
+
+void AdminMenu::on_Back_clicked()
+{
+    emit backtomenu();
+    this->accept();
+}

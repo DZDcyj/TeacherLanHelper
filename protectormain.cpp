@@ -48,12 +48,14 @@ void protectormain::getMode()
     if (isProtectMode)
     {
         ui->ToProtectMode->setVisible(false);
+        ui->KeepData->setVisible(true);
         ui->Status->setText(QString::fromLocal8Bit("当前处于保护模式"));
         ui->Status->setStyleSheet("QLabel{color:black;}");
     }
     else
     {
         ui->ToProtectMode->setVisible(true);
+        ui->KeepData->setVisible(false);
         ui->Status->setText(QString::fromLocal8Bit("当前处于开放模式"));
         ui->Status->setStyleSheet("QLabel{color:red;}");
     }
@@ -131,4 +133,25 @@ void protectormain::saveFromOpen()
     save->setModal(true);
     this->reset();
     save->show();
+}
+
+void protectormain::on_KeepData_clicked()
+{
+    connect(ui->KeepData,SIGNAL(clicked()),this,SLOT(reset()));
+    datakeeplogin=new dataKeepLogin;
+    datakeeplogin->show();
+    connect(datakeeplogin,SIGNAL(back()),this,SLOT(reshow()));
+    connect(datakeeplogin,SIGNAL(reset()),this,SLOT(reset()));
+    connect(datakeeplogin,SIGNAL(openLan()),this,SLOT(directOpen()));
+    this->reset();
+    qtimer->stop();
+    this->accept();
+}
+
+void protectormain::directOpen()
+{
+    mainwindow = new MainWindow;
+    mainwindow->show();
+    qtimer->stop();
+    this->accept();
 }

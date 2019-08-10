@@ -149,6 +149,25 @@
     <string>保护模式</string>
    </property>
   </widget>
+  <widget class="QPushButton" name="KeepData">
+   <property name="geometry">
+    <rect>
+     <x>340</x>
+     <y>60</y>
+     <width>101</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>宋体</family>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>保留数据</string>
+   </property>
+  </widget>
  </widget>
  <resources>
   <include location="pic.qrc"/>

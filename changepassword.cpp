@@ -24,11 +24,21 @@ void ChangePassword::on_OK_clicked()
     QString newpswd=ui->new_pswd->text();
     QString md5ori=md5Text(oripswd);
     QString md5new=md5Text(newpswd);
+    QString changepswdto;
+    if (ui->AdminPswd->isChecked())
+    {
+        changepswdto = "adminpswd";
+    }
+    else
+    {
+        changepswdto = "keepdatapswd";
+    }
+    originalpassword=qsettings.value(changepswdto).toString();
     if(!newpswd.isEmpty())
     {
         if(md5ori==originalpassword)
         {
-            qsettings.setValue("adminpswd",md5new);
+            qsettings.setValue(changepswdto,md5new);
             QMessageBox::information(this,QString::fromLocal8Bit("提醒"),QString::fromLocal8Bit("密码修改成功！你的新密码是: ")+newpswd);
             originalpassword=qsettings.value("adminpswd").toString();
         }

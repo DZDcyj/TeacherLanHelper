@@ -30,6 +30,7 @@ SOURCES += \
         adminmenu.cpp \
         backingup.cpp \
         changepassword.cpp \
+        datakeeplogin.cpp \
         lanforum.cpp \
         laninfo.cpp \
         main.cpp \
@@ -46,6 +47,7 @@ HEADERS += \
         adminmenu.h \
         backingup.h \
         changepassword.h \
+        datakeeplogin.h \
         lanforum.h \
         laninfo.h \
         mainwindow.h \
@@ -61,6 +63,7 @@ FORMS += \
         adminmenu.ui \
         backingup.ui \
         changepassword.ui \
+        datakeeplogin.ui \
         lanforum.ui \
         laninfo.ui \
         mainwindow.ui \
@@ -80,3 +83,9 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 RESOURCES += \
     pic.qrc
+
+DISTFILES += \
+    icon.rc
+
+RC_FILE +=\
+    icon.rc

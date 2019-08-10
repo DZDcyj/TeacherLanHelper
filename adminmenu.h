@@ -28,6 +28,8 @@ private slots:
 
     void on_OpenMode_clicked();
 
+    void on_Back_clicked();
+
 private:
     Ui::AdminMenu *ui;
 

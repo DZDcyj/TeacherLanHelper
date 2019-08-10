@@ -24,6 +24,9 @@ private slots:
     void changetext();
     void finish();
     void addprogress();
+    QString getTextFromFile(QString filepath);
+    void setTextToFile(QString filepath,QString str);
+    void transferTextData(QString origin_filepath,QString target_filepath);
 };
 
 #endif // BACKINGUP_H

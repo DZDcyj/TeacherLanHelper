@@ -40,7 +40,7 @@
    <property name="geometry">
     <rect>
      <x>30</x>
-     <y>80</y>
+     <y>60</y>
      <width>151</width>
      <height>51</height>
     </rect>
@@ -59,7 +59,7 @@
    <property name="geometry">
     <rect>
      <x>260</x>
-     <y>80</y>
+     <y>60</y>
      <width>151</width>
      <height>51</height>
     </rect>
@@ -78,7 +78,7 @@
    <property name="geometry">
     <rect>
      <x>260</x>
-     <y>140</y>
+     <y>120</y>
      <width>191</width>
      <height>21</height>
     </rect>
@@ -104,6 +104,25 @@
    </property>
    <property name="text">
     <string>修改密码</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="Back">
+   <property name="geometry">
+    <rect>
+     <x>260</x>
+     <y>150</y>
+     <width>151</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>黑体</family>
+     <pointsize>18</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>返回系统</string>
    </property>
   </widget>
  </widget>

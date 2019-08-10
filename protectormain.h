@@ -10,6 +10,7 @@
 #include "adminmenu.h"
 #include "adminlogin.h"
 #include "saving.h"
+#include "datakeeplogin.h"
 
 namespace Ui {
 class protectormain;
@@ -29,6 +30,7 @@ private:
     backingup *backingup;
     AdminLogin *adminlogin;
     Saving *save;
+    dataKeepLogin *datakeeplogin;
 
 private slots:
    void secondminus();
@@ -39,6 +41,8 @@ private slots:
    void on_AdminMenu_clicked();
    void reshow();
    void saveFromOpen();
+   void on_KeepData_clicked();
+   void directOpen();
 };
 
 #endif // PROTECTORMAIN_H
