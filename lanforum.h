@@ -25,6 +25,8 @@ private slots:
     void on_PutUp_clicked();
 
 
+    void on_Clear_clicked();
+
 private:
     Ui::LanForum *ui;
 };

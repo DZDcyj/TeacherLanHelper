@@ -34,7 +34,6 @@ LanForum::~LanForum()
 
 void LanForum::on_PutUp_clicked()
 {
-    // TODO
     QDir dir;
     QString path;
     path=dir.currentPath();
@@ -62,4 +61,15 @@ void LanForum::on_PutUp_clicked()
     ui->Message->clear();
     ui->afterName->clear();
     ui->None->setChecked(true);
+}
+
+void LanForum::on_Clear_clicked()
+{
+    QFile comments(filepath);
+    QTextStream txtOutput(&comments);
+    comments.open(QIODevice::WriteOnly|QIODevice::Text);
+    comments.close();
+    comments.open(QIODevice::ReadOnly|QIODevice::Text);
+    ui->Forum->setText(QString::fromLocal8Bit(comments.readAll()));
+    comments.close();
 }
